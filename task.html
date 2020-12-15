@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <form onsubmit="return func()">
+        <p>Name</p>
+
+        <input id="box" type="text">
+        <p>Age</p>
+        <input id="age" type="text">
+        
+        <br>
+        <br>
+        <!-- <input type="button" onclick="func()"  value="Add" > -->
+
+        <input type="submit" value="Add">
+
+        <br>
+        <br>
+        <input type="button" onclick="disp()" value="Display">  
+    </form>
+    <script>
+
+        var names = [];
+        var age=[];
+        var x = 0;
+        function func() {
+            console.log("hello");
+
+            names[x] = document.getElementById("box").value;
+            age[x]=document.getElementById("age").value;
+            x++;
+            document.getElementById('box').value = " ";
+            document.getElementById('age').value = " ";
+            console.log(names);
+            return false;
+        }
+
+
+
+        function disp() {
+            var i;
+            for (i = 0; i < names.length; i++) {
+                document.write( names[i] + " ");
+                document.write(age[i] + " ");
+                document.write(`<br>`);
+
+            }
+        }
+
+
+      
+
+    </script>
+</body>
+
+</html>
